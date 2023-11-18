@@ -15,6 +15,7 @@ git add .//always use this before pushing
 git commit -m "Your commit message here"//used to commit messages
 git push origin your-branch-name//after finishing commit push it
 
+git clone -b NusaibaAlam https://github.com/nusaibaalam/Wearwisee.git//for cloning the branch 
 
 
 

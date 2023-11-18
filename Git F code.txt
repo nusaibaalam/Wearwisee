@@ -17,6 +17,12 @@ git push origin your-branch-name//after finishing commit push it
 
 git clone -b NusaibaAlam https://github.com/nusaibaalam/Wearwisee.git//for cloning the branch 
 
+*****MERGE 2 BRANCH 1st then push**************
+git merge --allow-unrelated-histories origin/branch-1//if problem with merge
+git merge origin/branch-1//merges the files of 2 branch
+git add .//add file to the local repo to push
+$ git commit -m "sprint 2"//commit
+$ git push origin mehedimahfuzlam//pushes it 
 
 
 

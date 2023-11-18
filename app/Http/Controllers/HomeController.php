@@ -46,5 +46,17 @@ class HomeController extends Controller
         return view('home.product_show');
     }
 
+   
+    //mehedimahfuzlam sprint 2 
+    public function product_search(Request $request)
+    {
+    $search_text = $request->search;
+    $product = products::where('product_title', 'LIKE', "%" . $search_text . "%")->paginate(2);
+
+
+    $catagory = Catagory::where('catagory_name', 'LIKE', "%" . $search_text . "%")->paginate(2);
+    return view('home.userpage', compact('product', 'catagory'));
+    }
+
 
 }

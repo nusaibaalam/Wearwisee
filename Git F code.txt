@@ -1,0 +1,27 @@
+git clone <repository URL>
+git init//makes the local repository
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git remote add origin <remote repository URL>//conects the local repository to remote repository(online repository)
+***First pull then push***
+git pull origin your-branch-name
+
+git branch//shows all the branch 
+git checkout branch-name// switches the branch
+git pull origin branch-name//alwasys pull before making any changes 
+git branch -D branch-to-delete//deletes the branches actually works
+
+git add .//always use this before pushing 
+git commit -m "Your commit message here"//used to commit messages
+git push origin your-branch-name//after finishing commit push it
+
+
+
+
+
+
+
+
+
+
+

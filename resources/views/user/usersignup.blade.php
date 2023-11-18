@@ -87,7 +87,7 @@
             </div>
             <!--Sign up button button-->
             <div class="text-center" >
-            <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as Admin</button>
+            <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as User</button>
         </div>
     </form>
 

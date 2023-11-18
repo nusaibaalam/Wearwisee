@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
 use App\Http\Controllers\UserSignupController;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,12 +84,17 @@ Route :: post('/userlogin',[UserSignupController::class,'user_login']);
 
 
 
-//test auth user
+//user auth
 
 Route::middleware(['user.auth'])->group(function () {
 
     
     Route :: get('/test1',[admin_content_controller::class,'view_test1']);
+    
+    Route::get('/', [HomeController::class, 'index']);
+    
+    
+    
     
     });
 
@@ -101,5 +106,12 @@ Route :: get('/userlogout', function(){
     }
 
 });
+
+//NusaibaAlam sprint 2
+
+route::get('/product_details/{product_id}',[HomeController::class,'product_details']);
+
+route::get('/product_show',[HomeController::class,'product_show']);
+
 
 

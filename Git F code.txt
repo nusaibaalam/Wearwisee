@@ -1,0 +1,34 @@
+git clone <repository URL>
+git init//makes the local repository
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git remote add origin <remote repository URL>//conects the local repository to remote repository(online repository)
+***First pull then push***
+git pull origin your-branch-name
+
+git branch//shows all the branch 
+git checkout branch-name// switches the branch
+git pull origin branch-name//alwasys pull before making any changes 
+git branch -D branch-to-delete//deletes the branches actually works
+
+git add .//always use this before pushing 
+git commit -m "Your commit message here"//used to commit messages
+git push origin your-branch-name//after finishing commit push it
+
+git clone -b NusaibaAlam https://github.com/nusaibaalam/Wearwisee.git//for cloning the branch 
+
+*****MERGE 2 BRANCH 1st then push**************
+git merge --allow-unrelated-histories origin/branch-1//if problem with merge
+git merge origin/branch-1//merges the files of 2 branch
+git add .//add file to the local repo to push
+$ git commit -m "sprint 2"//commit
+$ git push origin mehedimahfuzlam//pushes it 
+
+
+
+
+
+
+
+
+

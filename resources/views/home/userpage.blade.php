@@ -21,6 +21,11 @@
       <link href="home/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="home/css/responsive.css" rel="stylesheet" />
+
+
+      <script src=<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>></script>
+
+
    </head>
    <body>
       @include('sweetalert::alert')
@@ -34,16 +39,64 @@
       </div>
       @include('home.product')
 
-      <div style="text-align: center; padding-bottom: 30px;">
-         <h1 style="font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
-         <form>
-            <textarea style="height: 150px; width: 600px;" placeholder="Comment something here"></textarea>
-            <br>
-            <a href="" class="btn btn-primary">Comment</a>
-         </form>
+      <!--Comment Box-->
+
+         <div style="text-align: center; padding-bottom: 30px;">
+            <h1 style="font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
+            <form>
+               <textarea style="height: 150px; width: 600px;" placeholder="Comment something here"></textarea>
+               <br>
+               <a href="" class="btn btn-primary">Comment</a>
+            </form>
 
 
+         </div>
+
+         <div>
+            <b>Adnan</b>
+            <p>This is my first comment</p>
+
+            <a href="javascript::void(0);"onclick="reply(this)">Reply</a>
+
+         </div>
+
+         <div>
+            <b>Nusaiba</b>
+            <p>This is my second comment</p>
+
+            <a href="javascript::void(0);" onclick="reply(this)">Reply</a>
+            
+         </div>
+
+
+         <div>
+            <b>Arian</b>
+            <p>This is my third comment</p>
+
+            <a href="javascript::void(0);"onclick="reply(this)" >Reply</a>
+            
+         </div>
+
+         <div>
+         <b>Mehedi</b>
+         <p>This is my last comment</p>
+
+         <a href="javascript::void(0);" onclick="reply(this)">Reply</a>
+         
       </div>
+
+      <div style="display: none;" class="replyDiv">
+         <textarea style="height: 100px; width: 500px;" placeholder="Write something here" ></textarea>
+         <br>
+
+         <a href="" class="btn btn-primary" > Reply</a>
+      </div>
+
+
+
+
+
+      <!-- Comment Box Ends-->
       
 
 
@@ -76,6 +129,25 @@
          
          </p>
       </div>
+
+      <script type=" text/javascript">
+
+        function reply(caller)
+        {
+         $('.replyDiv').insertAfter($(caller));
+
+         $('.replyDiv').show();
+        }
+
+    </script>
+
+
+
+
+
+
+
+
       <script>
         document.addEventListener("DOMContentLoaded", function(event) { 
             var scrollpos = localStorage.getItem('scrollpos');
@@ -86,6 +158,8 @@
             localStorage.setItem('scrollpos', window.scrollY);
         };
     </script>
+
+    
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

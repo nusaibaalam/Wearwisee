@@ -90,8 +90,11 @@ Route::middleware(['user.auth'])->group(function () {
 
     
     Route :: get('/test1',[admin_content_controller::class,'view_test1']);
-    
+    route::post('/add_cart/{product_id}',[HomeController::class,'add_cart']);
     Route::get('/', [HomeController::class, 'index']);
+    route::get('/show_cart',[HomeController::class,'show_cart']);
+    route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
+
     
     
     
@@ -115,3 +118,13 @@ route::get('/product_show',[HomeController::class,'product_show']);
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

@@ -198,8 +198,22 @@ class HomeController extends Controller
               
         return back();
     }
-    
+    // lam sprint3
+    public function show_order()
+    {
+        $username = session('user');
+        $order = order::where('username','=', $username)->get();
+        return view('home.order',compact('order'));
+    }
 
+    public function cancel_order($id)
+    {
+        $order=order::find($id);
+        $order->delivery_status='Your order have been canceled';
+        $order->save();
+        return redirect()->back();
+
+    }
 
 
 }

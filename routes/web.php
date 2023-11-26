@@ -95,6 +95,10 @@ Route::middleware(['user.auth'])->group(function () {
     route::get('/show_cart',[HomeController::class,'show_cart']);
     route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
     
+    // Adnan Sprint 3
+    route::get('/cash_order',[HomeController::class,'cash_order']);
+    route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+    Route::post('stripe/{totalprice}',[HomeController::class,'stripePost'])->name('stripe.post');
     
     
     
@@ -118,3 +122,13 @@ Route::get('/guestuser', [HomeController::class, 'index2']);
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

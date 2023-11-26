@@ -214,7 +214,40 @@ class HomeController extends Controller
         return redirect()->back();
 
     }
+    public function print_pdf($id)
+    {
+        $order=order::find($id);
+        $pdf=PDF::loadView('home.pdf',compact('order'));
+        return $pdf->download('order_details.pdf');
+    }
 
+    public function profile()
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+
+        return view('home.profile',compact('user'));
+    }
+
+    public function profile_edit()
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+        return view('home.profile_edit',compact('user'));
+    }
+
+    public function profile_update(Request $request,$id)
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->save();
+        return redirect('profile');
+    }
 
 }
 

@@ -138,3 +138,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+//ARIAN Sprint 3
+Route::post('/product/{product_id}/add_comment', [HomeController::class, 'add_comment']);
+
+Route::post('/add_reply',[HomeController::class,'add_reply']);

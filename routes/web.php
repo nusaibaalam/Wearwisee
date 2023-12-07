@@ -158,8 +158,11 @@ Route::middleware(['vendor.auth'])->group(function () {
     Route :: get('/vendor_dashboard',[VendorSignupController::class,'vendor_dashboard']);
 
     Route :: view('welcome','welcome');
-
-
+    //Lam Sprint -04
+    Route :: get('/v_view_product',[admin_content_controller::class,'v_view_product']);
+    Route :: post('/v_add_product',[admin_content_controller::class,'v_add_product']);
+    Route :: get('/v_p_show_products',[admin_content_controller::class,'show_vendor_products']);
+    Route :: get('/v_show_products',[admin_content_controller::class,'show_approved_vendor_products']);
 
 
     });

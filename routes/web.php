@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
 use App\Http\Controllers\UserSignupController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VendorSignupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -144,3 +145,41 @@ Route::middleware([
 Route::post('/product/{product_id}/add_comment', [HomeController::class, 'add_comment']);
 
 Route::post('/add_reply',[HomeController::class,'add_reply']);
+
+//Nusaiba Sprint 4
+Route :: get('/vendorsignup',[VendorSignupController::class,'index']);
+Route :: post('/vendorsignup',[VendorSignupController::class,'vendor_data_store']);
+
+Route :: get('/vendorlogin',[VendorSignupController::class,'get_login']);
+Route :: post('/vendorlogin',[VendorSignupController::class,'vendor_login']);
+
+Route::middleware(['vendor.auth'])->group(function () {
+
+    Route :: get('/vendor_dashboard',[VendorSignupController::class,'vendor_dashboard']);
+
+    Route :: view('welcome','welcome');
+
+
+
+
+    });
+
+    Route :: get('/vendorlogout', function(){
+        if (session()->has('vendor')) {
+            session()->pull('vendor');
+            return redirect('vendorlogin');
+        }
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+    

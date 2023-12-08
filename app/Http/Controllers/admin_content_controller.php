@@ -11,6 +11,7 @@ use App\Models\Order;
 use App\Models\VendorSignup;
 use App\Models\final_vendors;
 use App\Models\Temp_product;
+use App\Models\Customer;
 
 class admin_content_controller extends Controller
 {

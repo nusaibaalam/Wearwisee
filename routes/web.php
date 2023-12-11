@@ -164,7 +164,11 @@ Route::middleware(['vendor.auth'])->group(function () {
     Route :: get('/v_p_show_products',[admin_content_controller::class,'show_vendor_products']);
     Route :: get('/v_show_products',[admin_content_controller::class,'show_approved_vendor_products']);
     
-    
+    //Arian Sprint 4
+    Route :: get('/v_delete_product/{product_id}',[admin_content_controller::class,'v_delete_product']);
+    Route :: get('/v_edit_product/{product_id}',[admin_content_controller::class,'v_edit_product']);
+    Route :: post('/v_update_product/{product_id}',[admin_content_controller::class,'v_update_product']);
+
     // Adnan Sprint 4
     
     Route :: get('/v_orders',[admin_content_controller::class,'v_orders']);

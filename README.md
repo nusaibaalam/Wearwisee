@@ -1,3 +1,3 @@
 CSE470 PROJECT
 
-Project Name: Online Clothing Reantal Service
+Project Name: Online Clothing Rental Service
